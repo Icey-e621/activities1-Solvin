@@ -8,13 +8,19 @@ public class Activity0Exercise16 {
   
   /**
    * Calcula el maximo de los enteros almacenados en el array
-   * @param array contiene los enteros
-   * @return el valor mínimo
-   */
-  public static int maximum(int[] array) {
-    
-    return 0;
-  }
+     *
+     * @param array contiene los enteros
+     * @return el valor mínimo
+     */
+    public static int maximum(int[] array) {
+        int ret = array[0];
+        for (int num : array) {
+            if (ret < num) {
+                ret = num;
+            }
+        }
+        return ret;
+    }
 
   /**
    * Calcula el mínimo de los enteros almacenados en el array
@@ -23,7 +29,13 @@ public class Activity0Exercise16 {
    */
   public static int minimum(int[] array) {
     
-    return 0;
+    int ret = array[0];
+    for (int num : array) {
+        if (ret > num) {
+            ret = num;
+        }
+    }
+    return ret;
   }
 /**
  * Calcula el promedio de los enteros almacenados en el array
@@ -31,20 +43,25 @@ public class Activity0Exercise16 {
  * @return el valor promedio
  */
   public static double average(int[] array) { 
-    
-    return 0;
+      int n = 0;
+      for (int num : array){
+          n += num;
+      }
+    return n/array.length;
   }
 
   public static int readInteger(String message) {
-    
-    return 0;
+      System.out.print(message);
+    return Integer.parseInt(new Scanner(System.in).nextLine());
   }
   /**
    * almacena enteros en el array haciendo uso del método readInteger
    * @param array que almacenará los enteros
    */
   public static void readArray(int[] array) {
-    
+    for(int i = 0;i<array.length;i++){
+        array[i] = readInteger(new StringBuilder().append("give me the number in the position ").append((i+1)).append(": ").toString());
+    }
   }
   
 }
